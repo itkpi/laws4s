@@ -1,12 +1,10 @@
 package laws4s.boolean
-
 import scala.language.higherKinds
 
 trait Negation[F[_]] {
   type Out[_]
-  final type ~[x] = Out[x]
 
-  def negate[A](fa: F[A]): Out[A]
+  def apply[A](fa: F[A]): Out[A]
 }
 
 object Negation {
